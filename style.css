@@ -1,5 +1,3 @@
-/* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -174,23 +172,22 @@ section {
   height: 80vh;
 }
 
-
 .section__pic-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  width: 100%; 
-  max-width: 300px; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
   max-height: 300px;
-  margin: auto 0; 
- }
- 
- .section__pic-container img {
-  max-width: 120%; 
-  max-height: 120%; 
-  border-radius: 2rem; 
- }
+  margin: auto 0;
+}
+
+.section__pic-container img {
+  max-width: 120%;
+  max-height: 120%;
+  border-radius: 2rem;
+}
 
 .section__text {
   align-self: center;
@@ -231,14 +228,14 @@ section {
   cursor: pointer;
   height: 2rem;
 }
-.scrollicon{
+
+.scrollicon {
   cursor: pointer;
   height: 3rem;
   width: 2rem;
 }
 
 /* BUTTONS */
-
 .btn-container {
   display: flex;
   justify-content: center;
@@ -294,16 +291,37 @@ section {
 }
 
 .about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  display: inline-block;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap into multiple lines */
+  justify-content: space-between;
+  /* Space items evenly */
+  gap: 2.5rem;
+  /* Adjust the gap between elements */
+  margin: 1rem;
+  /* Add some space around the container */
+  color: black;
+  /* Ensure text color is readable */
 }
 
 .about-details-container {
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  /* Ensure content is stacked vertically */
+  justify-content: center;
+  /* Center the content vertically */
+  align-items: center;
+  /* Center the content horizontally */
+  gap: 2rem;
+  /* Adjust the gap between elements */
+  margin-bottom: 2rem;
+  /* Add some space at the bottom */
+  margin-top: 2rem;
+  /* Add some space at the top */
+  color: black;
+  /* Ensure text color is readable */
+  white-space: normal;
+  /* Allow text to wrap */
 }
 
 .about-containers,
@@ -317,21 +335,41 @@ section {
 
 .icon.arrow {
   position: fixed;
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
+  bottom: 20px;
+  /* Adjust as needed */
+  right: 20px;
+  /* Adjust as needed */
   cursor: pointer;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
+  /* Ensure it's above other content */
+}
+
+@media screen and (max-width: 600px) {
+  .icon.arrow {
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    bottom: 10px; /* Adjust position as needed */
+    right: 10px; /* Adjust position as needed */
+  }
 }
 
 .details-container {
-  padding: 1.5rem;
+  padding: 1rem;
   flex: 1;
   background: white;
   border-radius: 2rem;
   border: white 0.2rem solid;
   border-color: white;
-  /* text-align: center; */
+  /* text-align: center;  */
   margin-left: 2rem;
+} 
+
+@media screen and (max-width: 768px) {
+  .details-container {
+    padding: 1rem; /* Adjust padding as needed */
+    width: 75%; /* Adjust width as needed */
+    margin: auto; /* Center the container */
+  }
 }
 
 .section-container {
@@ -368,6 +406,7 @@ section {
   justify-content: space-around;
   color: black;
 }
+
 .article-container p {
   color: black;
 }
@@ -383,32 +422,48 @@ article .icon {
   cursor: default;
 }
 
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent; /* Make the button background transparent */
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+/* Responsive Design for Experience Section */
+@media screen and (max-width: 768px) {
+  #experience .article-container {
+    flex-wrap: wrap;
+    /* Allow items to wrap into multiple lines */
+    justify-content: space-between;
+    /* Space items evenly */
+  }
 
-.slider-btn-left {
-  left: 10px;
-}
+  #experience article {
+    width: calc(50% - 1.25rem);
+    /* Adjust width for two columns */
+    margin-bottom: 1.25rem;
+    /* Add some space between rows */
+  }
 
-.slider-btn-right {
-  right: 10px;
+  #experience .experience-sub-title {
+    font-size: 1.5rem;
+    /* Adjust font size for better readability on mobile */
+  }
+
+  #experience .article-container p {
+    font-size: 1rem;
+    /* Adjust font size for better readability on mobile */
+  }
+  #experience .article-container article {
+    width: calc(50% - 10px); /* Adjust width for two columns */
+    margin-bottom: 10px; /* Add some space between rows */
+  }
 }
 
 /* PROJECTS SECTION */
-
 #projects {
   position: relative;
-  display: flex; /* Make the container a flex container */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Push the button to the bottom */
-  height: 100%; /* Ensure the container takes full height */
+  display: flex;
+  /* Make the container a flex container */
+  flex-direction: column;
+  /* Stack children vertically */
+  justify-content: space-around;
+  /* Push the button to the bottom */
+  height: 100%;
+  /* Ensure the container takes full height */
 }
 
 .color-container {
@@ -418,7 +473,7 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
+  width: 50%;
   height: 90%;
 }
 
@@ -439,6 +494,90 @@ article .icon {
   overflow-x: auto;
   white-space: nowrap;
   height: 100%;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(28, 0, 208);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  position: absolute;
+  left: 30px;
+  /* Adjust this value as needed to move the button outside the container */
+  top: 57%;
+  transform: translateY(-50%);
+  z-index: 10;
+  /* Ensure the button is above the slides */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  border-color: #1db954;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .mySlides {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: auto; /* Adjust height as needed */
+  }
+
+  .slideshow-container {
+    max-width: 100%; /* Ensure it takes full width */
+    position: relative;
+    margin: auto;
+  }
+
+  .prev,
+  .next {
+    top: 50%; /* Adjust position as needed */
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .prev {
+    left: 10px; /* Adjust position as needed */
+  }
+
+  .next {
+    right: 10px; /* Adjust position as needed */
+  }
 }
 
 /* CONTACT */
@@ -493,4 +632,132 @@ footer {
 footer p {
   margin-top: 7rem;
   text-align: center;
+}
+
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+
+  .about-containers {
+    flex-wrap: wrap;
+  }
+
+  #contact,
+  #projects {
+    height: 120%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
+
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  #profile,
+  .section-container {
+    display: block;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  section,
+  .section-container {
+    height: fit-content;
+  }
+
+  section {
+    margin: 0 5%;
+  }
+
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  .about-containers {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+
+  article {
+    font-size: 1rem;
+  }
+
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+
+  .contact-info-container {
+    margin: 0;
+  }
+
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .text-container {
+    text-align: justify;
+  }
 }
