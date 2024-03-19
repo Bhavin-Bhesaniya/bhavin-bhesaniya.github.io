@@ -8,11 +8,12 @@
   }
   #contact,
   #projects {
-    height: fit-content;
+    height: 120%;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   #desktop-nav {
     display: none;
   }
